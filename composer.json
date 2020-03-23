@@ -1,0 +1,8 @@
+{
+    "name": "nwn/nyp_chatbot_cms",
+    "description": "nyp chatbot",
+    "require": {
+        "kreait/firebase-php": "^4.41",
+        "google/cloud-firestore": "^1.11"
+    }
+}
