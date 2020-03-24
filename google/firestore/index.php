@@ -18,10 +18,16 @@
         public function getCollections($collection){
             return $this->db->collection($collection)->documents();
         }
+        public function getDocumentFromCollections($collection, $docId){
+            return $this->db->collection($collection)->document($docId);
+        }
         public function addToCollection($collection, $options){
             $doc = $options["full_name"];
             preg_match_all('/(?<=\s|^)[a-z]/i', $doc, $matches);
             $this->db->collection($collection)->document(strtolower(implode("", $matches[0])))->set($options);
+        }
+        public function deleteFromCollection($collection, $doc){
+            $this->db->collection($collection)->document($doc)->delete();
         }
     }
 ?>

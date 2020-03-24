@@ -7,5 +7,6 @@
         <h4>Duration: <span class="duration"><input type="text" name="duration" value="<?=$document["duration"]; ?>"/></span></h4>
         <h4>Description: <br><span class="description"><input type="text" name="description" value="<?=$document["description"];?>"/></span></h4>
         <input type="button" value="save" onclick="saveDocument.call(this, 'programme')"/>
+        <input type="button" value="delete" onclick="deleteDocument.call(this, 'programme')"/>
     </div>
     <?php endforeach;?>
