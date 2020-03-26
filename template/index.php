@@ -10,11 +10,12 @@
                 $content = file_get_contents($path);
                 foreach($this->vars as $key=>$val){
                     if(is_array($val)){
-                        $t = "";
-                        foreach($val as $v){
-                            $t.= "<span>$v</span>";
-                        }
-                        $val = $t;
+                        $val = implode(", ", $val);
+                        // $t = "";
+                        // foreach($val as $v){
+                        //     $t.= "<span>$v</span>";
+                        // }
+                        // $val = $t;
                     }
                     $content = preg_replace("/\[".$key."\]/", $val, $content);
                 }
